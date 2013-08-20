@@ -16,7 +16,11 @@
   </head>
   <body>
     <script type="text/x-handlebars">
-      <header><h1>BümBöx</h1></header>
+      <header>
+          {{#linkTo index}}
+          <h1>BümBöx</h1>
+          {{/linkTo}}
+      </header>
       {{outlet}}
       {{render "nowPlaying"}}
     </script>
