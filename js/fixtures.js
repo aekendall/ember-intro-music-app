@@ -140,12 +140,12 @@ App.SONG_FIXTURES = [{
   album: "4"
 }];
 
-App.ALBUM_FIXTURES.forEach(function(album, index) {
-    App.ALBUM_FIXTURES[index] = App.Album.create(album);
+App.ALBUM_FIXTURES = App.ALBUM_FIXTURES.map(function(album) {
+    return App.Album.create(album);
 });
 
-App.SONG_FIXTURES.forEach(function(song, index) {
-    App.SONG_FIXTURES[index] = App.Song.create(song);
+App.SONG_FIXTURES = App.SONG_FIXTURES.map(function(song) {
+    return App.Song.create(song);
 });
 
 App.ALBUM_FIXTURES.forEach(function(album) {
