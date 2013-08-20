@@ -23,7 +23,7 @@ App.AlbumRoute = Ember.Route.extend({
 // MODELS
 App.Album = Ember.Object.extend({
     totalDuration: function() {
-        return this.songs.reduce(function(totalDuration, song) {
+        return this.get("songs").reduce(function(totalDuration, song) {
             console.log(totalDuration + ", " + song);
             return totalDuration + song.duration;
         }, 0);
