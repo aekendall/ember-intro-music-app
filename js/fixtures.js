@@ -140,6 +140,14 @@ App.SONG_FIXTURES = [{
   album: "4"
 }];
 
+App.ALBUM_FIXTURES.forEach(function(album, index) {
+    App.ALBUM_FIXTURES[index] = App.Album.create(album);
+});
+
+App.SONG_FIXTURES.forEach(function(song, index) {
+    App.SONG_FIXTURES[index] = App.Song.create(song);
+});
+
 App.ALBUM_FIXTURES.forEach(function(album) {
   album.songs = album.songs.map(function(id) {
     var song = App.SONG_FIXTURES.findProperty('id', id);
