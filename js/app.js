@@ -9,6 +9,14 @@ App.Router.map(function() {
     this.resource("album", { path: "album/:album_id"});
 });
 
+App.ApplicationRoute = Ember.Route.extend({
+    events: {
+        play: function(song) {
+            this.controllerFor("nowPlaying").set("model", song);
+        }
+    }
+});
+
 App.IndexRoute = Ember.Route.extend({
     model: function() {
         return App.ALBUM_FIXTURES;
