@@ -1,5 +1,5 @@
-Intro to Ember Sample Music App
-=====================
+Sample Ember.js Music App
+=========================
 A small sample Ember.js app that lists albums and plays their songs. Built during August 2013 Intro to Ember session, hosted by @tomdale and @wycats in Chicago.
 
 Description
