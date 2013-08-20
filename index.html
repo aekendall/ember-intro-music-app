@@ -17,21 +17,31 @@
   <body>
     <script type="text/x-handlebars">
       <header><h1>BümBöx</h1></header>
-      <div class="album-list">
-        {{#each}}
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" id="index">
+        <div class="album-list">
+            {{#each}}
             <div class="album">
-              <img {{bindAttr src=artwork}}>
-              <p class="album-name">{{name}}</p>
-              <p class="album-artist">{{artist}}</p>
-              <p class="song-count">
-                8 songs
-                {{#if isExplicit}}
+                <img {{bindAttr src=artwork}}>
+                <p class="album-name">{{name}}</p>
+                <p class="album-artist">{{artist}}</p>
+                <p class="song-count">
+                    8 songs
+                    {{#if isExplicit}}
                     <span class="explicit">EXPLICIT</span>
-                {{/if}}
-              </p>
+                    {{/if}}
+                </p>
             </div>
-        {{/each}}
-      </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="album">
+        <div class="album-info">
+            Album info
+        </div>
     </script>
 
     <div id="qunit" style="display: none"></div>
