@@ -17,6 +17,13 @@ App.AlbumRoute = Ember.Route.extend({
     model: function(params) {
         return App.ALBUM_FIXTURES.findProperty("id", params.album_id);
     }
-})
+});
+
+Ember.Handlebars.helper("format-duration", function(value, options) {
+    var min = Math.floor(value / 60);
+    var secRaw = value % 60;
+    var sec = (secRaw < 10)? "0" + secRaw: secRaw;
+    return min + ":" + sec;
+});
 
 })();
