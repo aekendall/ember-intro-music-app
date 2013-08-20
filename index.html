@@ -18,7 +18,7 @@
     <script type="text/x-handlebars">
       <header><h1>BümBöx</h1></header>
       {{outlet}}
-      {{render nowPlaying}}
+      {{render "nowPlaying"}}
     </script>
 
     <script type="text/x-handlebars" id="index">
@@ -66,7 +66,20 @@
 
     <script type="text/x-handlebars" id="nowPlaying">
         <footer class="now-playing">
-            Footer: now playing
+        {{#if model}}
+            <img class="now-playing-artwork" {{bindAttr src=album.artwork}}>
+            <div class="now-playing-body">
+                <p class="now-playing-details">
+                    <span class="now-playing-name">{{name}}</span> -
+                    <span class="now-playing-artist">{{album.artist}}</span>
+                </p>
+                <div class="now-playing-player">
+                    <!-- You will fill this in later -->
+                </div>
+            </div>
+        {{else}}
+            <span class="now-playing-empty">Select a song to start playing.</span>
+        {{/if}}
         </footer>
     </script>
 

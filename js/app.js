@@ -3,6 +3,7 @@
 
 window.App = Ember.Application.create();
 
+
 // ROUTES
 App.Router.map(function() {
     this.resource("album", { path: "album/:album_id"});
@@ -20,6 +21,7 @@ App.AlbumRoute = Ember.Route.extend({
     }
 });
 
+
 // MODELS
 App.Album = Ember.Object.extend({
     totalDuration: function() {
@@ -30,6 +32,11 @@ App.Album = Ember.Object.extend({
 });
 
 App.Song = Ember.Object.extend({});
+
+
+// CONTROLLERS
+App.NowPlayingController = Ember.ObjectController.extend();
+
 
 // HELPERS
 Ember.Handlebars.helper("format-duration", function(value, options) {
