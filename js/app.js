@@ -67,10 +67,10 @@ App.AudioPlayerComponent = Ember.Component.extend({
             });
     },
     play: function() {
-        this.$("audio")[0].play();
+        this.$("audio").each(function(i, elem) { elem.play(); });
     },
     pause: function() {
-        this.$("audio")[0].pause();
+        this.$("audio").each(function(i, elem) { elem.pause(); });
     }
 });
 
