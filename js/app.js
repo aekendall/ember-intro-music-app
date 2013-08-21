@@ -43,6 +43,12 @@ App.Song = Ember.Object.extend({});
 App.NowPlayingController = Ember.ObjectController.extend();
 
 
+// COMPONENTS
+App.AudioPlayerComponent = Ember.Component.extend({
+    classNames: ["audio-control"]
+});
+
+
 // HELPERS
 Ember.Handlebars.helper("format-duration", function(value, options) {
     var min = Math.floor(value / 60);
